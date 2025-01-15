@@ -26,7 +26,10 @@ private baseUrl = 'http://localhost:8080/api/polls';
  
   
   vote(pollId:number, optionIndex:number):Observable<void>{
-    return this.http.post<void>(`${this.baseUrl}/vote`, { pollId,optionIndex});
+    const url='http://localhost:8080/api/polls/vote';
+    console.log("Vote count Increase started");
+    return this.http.post<void>(url, { pollId,optionIndex});
+   
   }
 
 }
